@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "RACReturnSignal.h"
 #import "loginViewModel.h"
 
@@ -36,14 +36,13 @@
     // VM:视图模型----处理展示的业务逻辑
     // 每一个控制器都对应一个VM模型
     
-    
-  
-    RACSignal *loginEnableSignal = [RACSignal combineLatest:@[self.accountField.rac_textSignal, self.pwdField.rac_textSignal] reduce:^id(NSString *account, NSString *pwd){
+    RACSignal *loginEnableSignal = [RACSignal combineLatest:@[self.accountField.rac_textSignal, self.pwdField.rac_textSignal]
+                                                     reduce:^id(NSString *account, NSString *pwd){
         return @(account.length && pwd.length);
     }];
     // 设置按钮是否能点击
     RAC(self.loginBtn, enabled) = loginEnableSignal;
-    
+        
     // 创建登录命令
     RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         // block调用：执行命令就会调用
@@ -61,6 +60,7 @@
             return nil;
         }];
     }];
+    
     // 获取命令中的信号源
     [command.executionSignals.switchToLatest subscribeNext:^(id x) {
         NSLog(@"%@", x);
@@ -82,17 +82,12 @@
         NSLog(@"点击登录按钮");
         // 处理登录事件
         [command execute:nil];
-        
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 @end

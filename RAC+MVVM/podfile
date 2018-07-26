@@ -1,4 +1,10 @@
 
-use_frameworks!
+platform :ios, '10.0'
+#use_frameworks!
 
-pod 'ReactiveCocoa', '~> 4.0.2-alpha-1'
+target 'ReactiveCocoa' do
+
+#pod 'ReactiveCocoa', '~> 7.2.0'
+pod 'ReactiveObjC', '~> 3.1.0'
+
+end
