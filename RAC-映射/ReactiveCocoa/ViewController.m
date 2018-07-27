@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "RACReturnSignal.h"
 
 //**RAC-bind**
@@ -49,7 +49,8 @@
     // 创建信号
     RACSubject *subject = [RACSubject subject];
     // 绑定信号
-    RACSignal *bindSignal = [subject flattenMap:^RACStream *(id value) {
+
+    RACSignal *bindSignal = [subject flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
         // block：只要源信号发送内容就会调用
         // value: 就是源信号发送的内容
         // 返回信号用来包装成修改内容的值
@@ -94,9 +95,10 @@
     //        NSLog(@"%@", x);
     //    }];
     // 方式4--------也是开发中常用的
-    [[signalofSignals flattenMap:^RACStream *(id value) {
+    
+    [[signalofSignals flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
         return value;
-    }] subscribeNext:^(id x) {
+    }] subscribeNext:^(id  _Nullable x) {
         NSLog(@"%@", x);
     }];
     
