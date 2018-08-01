@@ -1,22 +1,16 @@
 PODS:
-  - ReactiveCocoa (4.0.4-alpha-4):
-    - ReactiveCocoa/UI (= 4.0.4-alpha-4)
-    - Result (~> 1.0)
-  - ReactiveCocoa/Core (4.0.4-alpha-4):
-    - ReactiveCocoa/no-arc
-    - Result (~> 1.0)
-  - ReactiveCocoa/no-arc (4.0.4-alpha-4):
-    - Result (~> 1.0)
-  - ReactiveCocoa/UI (4.0.4-alpha-4):
-    - ReactiveCocoa/Core
-    - Result (~> 1.0)
-  - Result (1.0.2)
+  - ReactiveObjC (3.1.0)
 
 DEPENDENCIES:
-  - ReactiveCocoa (~> 4.0.4-alpha-4)
+  - ReactiveObjC (~> 3.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReactiveObjC
 
 SPEC CHECKSUMS:
-  ReactiveCocoa: e459ea92099447802df20c4735e31e8139b06094
-  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 9e768e0d60116c8cb1e3c5e6dd23a542367eccc3
+
+COCOAPODS: 1.5.3

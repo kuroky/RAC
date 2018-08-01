@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "TwoViewController.h"
 
 @interface ViewController ()

@@ -1,4 +1,10 @@
 
+platform :ios, '10.0'
+
+target 'RACCommand' do
+    
 use_frameworks!
 
-pod 'ReactiveCocoa', '~> 4.0.4-alpha-4'
+pod 'ReactiveObjC', '~> 3.1.0'
+
+end

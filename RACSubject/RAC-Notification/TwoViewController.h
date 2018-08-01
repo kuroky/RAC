@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface TwoViewController : UIViewController
 @property(nonatomic, strong)RACSubject *subject;
